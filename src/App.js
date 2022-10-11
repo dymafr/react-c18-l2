@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import { Outlet } from 'react-router-dom';
@@ -11,7 +11,11 @@ function App() {
   return (
     <div className={`d-flex flex-column ${styles.appContainer}`}>
       <Header />
-      <Outlet />
+      <div className="flex-fill d-flex flex-column">
+        <Suspense>
+          <Outlet />
+        </Suspense>
+      </div>
       <Footer />
     </div>
   );
