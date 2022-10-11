@@ -10,8 +10,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <RouterProvider router={router}>
-      <ApiContext.Provider value="https://restapi.fr/api/recipes" />
-    </RouterProvider>
+    <ApiContext.Provider value="https://restapi.fr/api/recipes">
+      <RouterProvider router={router} />
+    </ApiContext.Provider>
   </StrictMode>
 );
